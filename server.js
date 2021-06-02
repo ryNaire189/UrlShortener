@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
 
 //initialise connection to DB
-const url = "mongodb+srv://user_mochi:mB7X99s8hYexhWx0@clusterurl.5sehv.mongodb.net/ClusterUrl?retryWrites=true&w=majority";
+const url = "mongodb+srv://{user_name}:{mangoinstanceURL}";
 mongoose.set( 'useUnifiedTopology', true );
 mongoose.set( 'useNewUrlParser', true )
 mongoose.connect( url )
