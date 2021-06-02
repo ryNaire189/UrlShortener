@@ -5,9 +5,15 @@ const app = express()
 var validUrl = require('valid-url')
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
+const dotenv = require('dotenv')
+
+dotenv.config()
+const user = process.env.DB_USER
+const pass = process.env.DB_PASS
+const endpoint = process.env.DB_ENDPOINT
 
 //initialise connection to DB
-const url = "mongodb+srv://{user_name}:{mangoinstanceURL}";
+const url = `mongodb+srv://${user}:${pass}@${endpoint}`;
 mongoose.set( 'useUnifiedTopology', true );
 mongoose.set( 'useNewUrlParser', true )
 mongoose.connect( url )
